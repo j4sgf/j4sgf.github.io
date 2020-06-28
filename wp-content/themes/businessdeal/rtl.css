@@ -1,0 +1,451 @@
+/*
+Theme Name: BusinessDeal
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+
+
+
+body {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+
+/**
+ * 1.0 Reset
+  * -----------------------------------------------------------------------------
+ */
+
+th, td {
+  text-align: right;
+}
+
+ul, ol {
+    margin: 0 1.3125em 1.75em 0;
+}
+
+blockquote:before {
+    left: auto;
+    right: 0;
+}
+
+blockquote {
+    padding: 0 2.041666666666667em 0 0;
+}
+
+/**
+ * 2.0 Repeatable Patterns
+ * ----------------------------------------------------------------------------
+ */
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    right: 5px;
+    padding: 15px 23px 14px;
+}
+
+
+.alignnone {
+    margin: 5px 0px 20px 20px;
+}
+
+.aligncenter,
+div.aligncenter {
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:left;
+    margin: 5px 20px 20px 0px;
+}
+
+.alignleft {
+    float: right;
+    margin: 5px 0px 20px 20px;
+}
+
+a img.alignright {
+    float: left;
+    margin: 5px 20px 20px 0px;
+}
+
+a img.alignnone {
+    margin: 5px 0px 20px 20px;
+}
+
+a img.alignleft {
+    float: right;
+    margin: 5px 0px 20px 20px;
+}
+
+
+.wp-caption {
+    background: #fff;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.aligncenter,
+.wp-caption.alignnone{
+        margin: 5px auto 20px;
+}
+
+.wp-caption.alignleft{
+    margin: 5px 0px 20px 20px;
+}
+.wp-caption.alignright{
+    margin: 5px 20px 20px 0px;
+}
+
+/**
+ * 3.0 Header
+ * ----------------------------------------------------------------------------
+ */
+
+ .site-branding {
+    float: right;
+    padding: 5px 0 5px 25px;
+    text-align: right;
+}
+
+ .secondary-navigation {
+    float: right;
+}
+
+.secondary-menu > li:first-child {
+    border-right: 1px solid rgba(255,255,255, 0.2);
+}
+
+.header-social-menu {
+    float: left;
+}
+
+.header-right {
+    float: left;
+}
+
+/**
+ * 3.1 Site Navigation Bar
+ * ----------------------------------------------------------------------------
+ */
+
+.main-navigation {
+    float: right;
+}
+
+.search-toggle {
+    float: left;
+}
+
+
+/**
+ * 4.0 Main Content
+ * ----------------------------------------------------------------------------
+ */
+
+ .slide-text-wrap {
+    left: auto;
+    right: 10%;
+ }
+
+ .slide-text-content:after {
+    background-image: linear-gradient(to left, rgba(0,0,0,0.75), transparent);
+}
+
+.slide-text-content {
+    right: 0;
+}
+
+.slick-dots li:after {
+    margin-left: 0;
+    margin-right: -8px;
+}
+
+.main-content-area .widget_list_category_posts .lcp-right {
+    float: left;
+}
+
+.main-content-area {
+    float: right;
+}
+
+.left-widget-area {
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+.right-widget-area {
+    float: left;
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+
+ /* 4.1 Post-Content
+ * ----------------------------------------------------------------------------
+ */
+
+.sticky-post{
+    right: 15;
+    padding: 5px 15px;
+}
+
+.post-thumbnail {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+a.more-link {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.first-post.big-letter .entry-content > p:first-child:first-letter {
+    float: inherit;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.posts-navigation .nav-links .nav-next, 
+.post-navigation .nav-links .nav-next {
+    float: left;
+}
+
+.posts-navigation .nav-links .nav-previous, 
+.post-navigation .nav-links .nav-previous {
+    float: right;
+}
+
+.posts-navigation .nav-links .nav-previous:before, 
+.post-navigation .nav-links .nav-previous:before {
+    display: none;
+    float: left;
+    margin-top: 5px;
+}
+
+.posts-navigation .nav-links .nav-next:after, 
+.post-navigation .nav-links .nav-next:after {
+    display: none;
+    float: right;
+    margin-top: 5px;
+}
+
+.pagination .nav-links .prev:before,
+.pagination .nav-links .next:after {
+    display: none;
+}
+
+.widget-latest-posts .post-thumbnail {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.widget-latest-posts .entry-header {
+    text-align: right;
+}
+
+.blog-grid-meta i {
+    margin-right: 0;
+    margin-left: 6px;
+}
+
+
+ /* 4.1 Widget
+ * ----------------------------------------------------------------------------
+ */
+ .has-sidebar #primary {
+    float: right;
+}
+
+.has-sidebar #secondary {
+    float: left;
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+#secondary .widget-title:after,
+#colophon .widget-title:after {
+    left: auto;
+    right: -26px;
+}
+
+.widget_search .search-field, 
+.post-page-search .search-field {
+    float: right;
+}
+
+.left-widget-area .widget-title:before {
+    left: auto;
+    right: -20px;
+}
+
+.main-content-area .widget-title:after,
+#colophon .widget-title:after {
+    left: auto;
+    transform: rotate(-180deg);
+    right: 0;
+}
+
+.ex_design .bs-thumbnail .bs-thumbnail-holder:before {
+    transform: translate(50%, -50%) rotate(15deg);
+    right: 5%;
+    top: 50%;
+    left: auto;
+}
+
+.ex_design .bs-thumbnail .bs-thumbnail-holder::after {
+    transform: translate(50%, -50%) rotate(-170deg);
+    right: auto;
+    left: -69%;
+}
+
+.bs-content-row {
+    padding-right: 45px;
+    padding-left: 20%;
+}
+
+.bs-content .widget-title {
+    text-align: right;
+    padding-left: 20%;
+    padding-right: 45px;
+}
+
+.ex_design .services-item-inside:hover:before {
+    transform: translate(50%, -55%) rotate(110deg);
+}
+
+.rotated-bg.ex_design::before {
+    transform: translate(50%, -50%) rotate(45deg);
+    left: auto;
+    right: 10%;
+}
+
+.ai-ico {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.ts-content {
+    padding-left: 0;
+    padding-right: 28px;
+}
+
+.widget_blog_grid .widget-title {
+    text-align: right;
+}
+
+.widget_blog_grid .widget-title:before {
+    left: auto;
+}
+
+.footer-menu li {
+    text-align: right;
+}
+
+
+/*
+* 4.4 Gallery
+* -----------------------------------------
+*/
+.widget th, td {
+  text-align: right;
+}
+
+.back-to-top {
+    left: 30px;
+    right: auto;
+
+}
+
+ /* Footer ----------------------*/
+.site-info {
+    float: right;
+}
+
+.footer-right-info {
+    float: left;
+}
+
+
+/*
+* 7.0 Media Queries
+* --------------------------------------------------------------------
+*/
+
+@media (max-width: 900px){
+    blockquote{
+        margin-right: 0.3em;
+    }
+
+    .comment-list ol{
+        padding-right: 10px;
+    }
+
+    th, td {
+      text-align: right;
+    }
+}
+
+@media (max-width: 767px){
+    .main-navigation {
+        float: none;
+    }
+
+    .secondary-menu-toggle {
+        left: 40px;
+        right: auto;
+    }
+
+    .search-toggle {
+        right: auto;
+        left: 10px;
+    }
+
+    .main-banner .slick-dots {
+        left: 20px;
+        right: auto;
+    }
+}
+
+
+
+/**
+ * 8.0 Print
+ * ----------------------------------------------------------------------------
+ */
+
+
+@media print {   
+    .entry-content img.alignleft,
+    .entry-content .wp-caption.alignleft {
+        margin-right: 0;
+    }
+    .entry-content img.alignright,
+    .entry-content .wp-caption.alignright {
+        margin-left: 0;
+    }
+}
+
+
